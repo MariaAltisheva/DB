@@ -1,0 +1,7 @@
+CREATE TABLE Departments(DepartmentID INTEGER PRIMARY KEY NOT NULL,
+DepartmentName TEXT)
+CREATE TABLE Locations(LocationID INTEGER PRIMARY KEY NOT NULL, City TEXT)
+CREATE TABLE Employees(EmployeeID INTEGER PRIMARY KEY NOT NULL,
+Name TEXT, Position TEXT, DepartmentID INTEGER, LocationID INTEGER,
+FOREIGN KEY(DepartmentID) REFERENCES Departments(DepartmentID),
+FOREIGN KEY (LocationID) REFERENCES Locations(LocationID))
