@@ -81,7 +81,7 @@ class EmployeeDetails:
                 conn.close()
             return employee_list
 
-    def __get_details(self):
+    def __get_details(self, event):
         listbox_index = self.employee_listbox.curselection()[0]
         select_emp = self.employee_listbox.get(listbox_index)
 
@@ -95,12 +95,12 @@ class EmployeeDetails:
                 Employees.Name,
                 Employees.Position,
                 Departments.DepartmentName,
-                Location.City
+                Locations.City
                 FROM
                 Employees, Departments, Locations
                 WHERE
                 Employees.Name == ? AND
-                Employees.DepartmentID = Departments.DepartmentsID AND
+                Employees.DepartmentID = Departments.DepartmentID AND
                 Employees.LocationID == Locations.LocationID""", (select_emp, )
             )
             result = cur.fetchone()
