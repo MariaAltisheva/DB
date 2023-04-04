@@ -3,16 +3,14 @@ import tkinter.messagebox
 import sqlite3
 
 class EmployeeDetails:
+    """Создание класса сотрудника"""
     def __init__(self):
         # Создать главное окно
         self.main_window = tkinter.Tk()
-
         # Скомпановать содержимое главного окна
         self.__build_main_window()
-
         # Запуститить главный цикл
         tkinter.mainloop()
-
     def __build_main_window(self):
         # Создать надпись с полдсказкой для пользователя
         self.__create_promt_label()
